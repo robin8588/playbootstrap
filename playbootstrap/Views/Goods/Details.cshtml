@@ -1,0 +1,126 @@
+﻿@model playbootstrap.Models.Goods
+
+@{
+    ViewBag.Title = "货物详情";
+}
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GoodsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoodsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Thumbnail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thumbnail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BannerUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BannerUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoodsKind)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoodsKind)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoodsBreed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoodsBreed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoodsProduce)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoodsProduce)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoodsGrade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoodsGrade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoodsLabels)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoodsLabels)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoodsCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoodsCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OriginalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OriginalPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceUnit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriceUnit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderUnit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderUnit)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("编辑", "Edit", new { id = Model.GoodsId }, new { @class = "btn btn-default" }) 
+    @Html.ActionLink("返回列表", "Index",null, new { @class = "btn btn-default" })
+</p>

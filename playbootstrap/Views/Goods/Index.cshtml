@@ -1,0 +1,125 @@
+﻿@using playbootstrap.Models
+@model PageList<playbootstrap.Models.Goods>
+
+@{
+    ViewBag.Title = "产品列表";
+}
+
+
+    @using (Html.BeginForm())
+    {
+
+        @Html.TextBox("Search", null, new { @class = "form-control col-md-2", placeholder = "筛选内容" })
+        <div class="btn-group" role="group" aria-label="...">
+            <input type="submit" value="筛选" class="btn btn-default" />
+            @Html.ActionLink("新增", "Create", null, new { @class = "btn btn-warning" })
+        </div>
+    }
+
+        <table class="table">
+@foreach (var item in Model)
+{
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => item.GoodsName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.Thumbnail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.BannerUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.GoodsKind)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.GoodsBreed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.GoodsProduce)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.GoodsGrade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.GoodsLabels)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.GoodsCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.OriginalPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.PriceUnit)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => item.OrderUnit)
+                </th>
+                <th></th>
+            </tr>
+}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoodsName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Thumbnail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BannerUrl)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoodsKind)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoodsBreed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoodsProduce)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoodsGrade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoodsLabels)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoodsCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OriginalPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PriceUnit)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderUnit)
+                    </td>
+                    <td>
+                        @Html.ActionLink("编辑", "Edit", new { id = item.GoodsId }, new { @class = "btn btn-default" }) 
+                        @Html.ActionLink("详情", "Details", new { id = item.GoodsId }, new { @class = "btn btn-info" }) 
+                        @Html.ActionLink("删除", "Delete", new { id = item.GoodsId }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+
+@Html.Partial("_Paging", Model.PageInfo)

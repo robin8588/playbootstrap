@@ -1,0 +1,24 @@
+﻿@using playbootstrap.Models
+@model PageInfo
+
+<nav>
+    <ul class="pager">
+        @if (Model.HasPreviousPage)
+        {
+            <li class="previous"><a href="@Url.Action("Index","UserOrders",new { page = (Model.PreviousPage) })"><span aria-hidden="true">&larr;</span>上一页</a></li>
+        }
+        else
+        {
+            <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span>上一页</a></li>
+        }
+
+        @if (Model.HasNextPage)
+        {
+            <li class="next"><a href="@Url.Action("Index", "UserOrders", new { page = (Model.NextPage) })">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+        }
+        else
+        {
+            <li class="next disabled"><a href="#">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+        }
+    </ul>
+</nav>
