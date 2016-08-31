@@ -16,9 +16,15 @@ namespace playbootstrap.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Goods
-        public ActionResult Index(int page=0)
+        public ActionResult Index(string search,int page=0)
         {
-            return View(new PageList<Goods>(db.Goods.OrderByDescending(v=>v.GoodsName), page, 10));
+            if (string.IsNullOrEmpty(search))
+            {
+                return View(new PageList<Goods>(db.Goods.OrderByDescending(v => v.GoodsName), page, 10));
+            }else
+            {
+                return View(new PageList<Goods>(db.Goods.Where(v=>v.GoodsName.Contains(search)).OrderByDescending(v => v.GoodsName), page, 10));
+            }
         }
 
         // GET: Goods/Details/5

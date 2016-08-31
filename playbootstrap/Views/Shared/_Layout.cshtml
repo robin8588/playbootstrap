@@ -10,8 +10,7 @@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
+        <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -20,7 +19,7 @@
                 @Html.ActionLink("水果庄园管理后台", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul id="collapsenav" class="nav navbar-nav">
+                <ul class="nav navbar-nav visible-xs">
                     <li>@Html.ActionLink("主页", "Index", "Home")</li>
                     <li>@Html.ActionLink("产品", "Index", "Goods")</li>
                     <li>@Html.ActionLink("订单", "Index", "Orders")</li>
@@ -29,10 +28,8 @@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
-        </div>
     </div>
     <ol class="breadcrumb">
-        
         @foreach (var n in @Html.ViewContext.RouteData.Values)
         {
             if (n.Key == "action")
@@ -45,7 +42,7 @@
             }
         }
     </ol>
-    <div id="nav">
+    <div class="hidden-xs">
         <ul class="nav nav-pills nav-stacked">
             <li>@Html.ActionLink("主页", "Index", "Home")</li>
             <li>@Html.ActionLink("产品", "Index", "Goods")</li>
@@ -64,11 +61,12 @@
                 @RenderBody()
             </div>
         </div>
-        <br />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 水果庄园</p>
-        </footer>
     </div>
+    <br />
+    <footer class="text-left text-muted">
+        <p>&copy; @DateTime.Now.Year - 水果庄园</p>
+    </footer>
+
     @RenderSection("content", required: false)
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
@@ -76,8 +74,7 @@
         @{
             var url = HttpContext.Current.Request.Path;
         }
-        var navigation = responsiveNav("#nav", { label: '' });
-        $('#nav a[href="@url"]').parent().addClass("active");
+        $('.nav a[href="@url"]').parent().addClass("active");
     </script>
     @RenderSection("scripts", required: false)
 </body>

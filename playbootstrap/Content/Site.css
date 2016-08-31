@@ -1,7 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color:black;
+    background:#333;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -10,17 +10,17 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
-    padding:0.1em 0.1em;
+    padding:0 0;
     position: fixed;
     overflow: hidden;
     overflow-y: scroll;
     border-top-left-radius: 5px;
     box-shadow: 0 0 15px rgba(0,0,0,.6);
-    top: 80px;
+    top: 75px;
     right: 0;
-    left:110px;
+    left:125px;
     bottom: 0;
-    background: #000;
+    margin:0 0;
     max-width:100%;
 }
 
@@ -38,28 +38,9 @@ textarea {
     max-width: 280px;
 }
 
-footer{
-    margin:0 auto;
-    text-align:center;
-    color:#eee;
-}
-
-#nav{
-    width:120px;
-}
-
-#collapsenav{
-    display:none;
-}
-
-.nav-toggle { display: none }
-
 @media screen and (max-width: 768px){
-    .nav-toggle { display:block }
     .body-content {
         left: 0px;
+        top: 50px;
     }
-    #collapsenav {
-        display:block;
-    }
-} 
+}
