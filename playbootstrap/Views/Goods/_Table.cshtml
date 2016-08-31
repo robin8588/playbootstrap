@@ -1,0 +1,108 @@
+﻿@model IEnumerable<playbootstrap.Models.Goods>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Thumbnail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GoodsName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BannerUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GoodsKind)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GoodsBreed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GoodsProduce)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GoodsGrade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GoodsLabels)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GoodsCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OriginalPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PriceUnit)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderUnit)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+
+                    <td>
+                        <img src="@item.Thumbnail" alt="" height="40px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoodsName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BannerUrl)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoodsKind)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoodsBreed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoodsProduce)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoodsGrade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoodsLabels)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GoodsCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OriginalPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PriceUnit)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderUnit)
+                    </td>
+                    <td>
+                        @Html.ActionLink("编辑", "Edit", new { id = item.GoodsId }, new { @class = "btn btn-default" })
+                        @Html.ActionLink("详情", "Details", new { id = item.GoodsId }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("删除", "Delete", new { id = item.GoodsId }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

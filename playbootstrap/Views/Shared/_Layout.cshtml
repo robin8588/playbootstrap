@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
+    <title>@ViewBag.Title - 果果庄园管理后台</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -32,13 +32,14 @@
         </div>
     </div>
     <ol class="breadcrumb">
+        
         @foreach (var n in @Html.ViewContext.RouteData.Values)
         {
             if (n.Key == "action")
             {
                 <li class="active">@n.Value</li>
             }
-            else if(n.Key == "controller")
+            else if (n.Key == "controller")
             {
                 <li><a href='@Url.Action("Index")'>@n.Value</a></li>
             }
@@ -53,9 +54,8 @@
             <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
         </ul>
     </div>
-    
+
     <div class="container body-content">
-        
         <div class="panel panel-info">
             <div class="panel-heading">
                 <h3 class="panel-title">@ViewBag.Title</h3>
@@ -66,14 +66,18 @@
         </div>
         <br />
         <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
+            <p>&copy; @DateTime.Now.Year - 果果庄园</p>
         </footer>
     </div>
-    @RenderSection("content",required:false)
+    @RenderSection("content", required: false)
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     <script>
+        @{
+            var url = HttpContext.Current.Request.Path;
+        }
         var navigation = responsiveNav("#nav", { label: '' });
+        $('#nav a[href="@url"]').parent().addClass("active");
     </script>
     @RenderSection("scripts", required: false)
 </body>

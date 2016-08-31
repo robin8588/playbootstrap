@@ -41,6 +41,7 @@ textarea {
 footer{
     margin:0 auto;
     text-align:center;
+    color:#eee;
 }
 
 #nav{
@@ -53,7 +54,7 @@ footer{
 
 .nav-toggle { display: none }
 
-@media screen and (max-width: 640px){
+@media screen and (max-width: 768px){
     .nav-toggle { display:block }
     .body-content {
         left: 0px;

@@ -260,6 +260,7 @@
     <Content Include="Views\Goods\Edit.cshtml" />
     <Content Include="Views\Goods\Index.cshtml" />
     <Content Include="Views\Shared\_Paging.cshtml" />
+    <Content Include="Views\Goods\_Table.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
